@@ -12,6 +12,7 @@
 
 \setlength\parindent{0pt}
 \graphicspath{{./figures/}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
 \title{Vibrating {\rmfamily\textsc{MEMS}} Gyroscopes}
 \date{\today}
@@ -38,6 +39,7 @@
             \centering
             \includegraphics[width=1.\linewidth]{coriolis1.png}
             \caption{Coriolis effect on a mass\cite{MEMSblog}}
+            \label{fig:coriolis}
         \end{figure}
     \end{column}
     \hfill
@@ -45,11 +47,11 @@
         \begin{itemize}
             \item Coriolis force is proportional to the angular rate
             \begin{equation*}
-                \mathbf{F_{Coriolis} = - 2 m \mathbf{\omega} \times \mathbf{v}}
+                \mathbf{F_{Coriolis} = - 2 m \mathbf{\Omega} \times \mathbf{v}}
             \end{equation*}
             \item We can determine $F_{Coriolis}$ by measuring deflection (usually a capacitance measurement)
             \begin{equation*}
-                \mathbf{\omega} \propto \mathbf{F_{Coriolis}} \to \mathbf{F} \propto \mathbf{x} \propto \mathbf{C}
+                \mathbf{\Omega} \propto \mathbf{F_{Coriolis}} \to \mathbf{F} \propto \mathbf{x} \propto \mathbf{C}
             \end{equation*}
             \item But this will also measure linear acceleration
             \begin{equation*}
@@ -58,6 +60,21 @@
         \end{itemize}
     \end{column}
 \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Vibratory gyroscope: theory of operation}
+    Consider that the fig.\ref{fig:coriolis} system is oscillating purely in the x-axis at resonant frequency $\omega_r$ ($\mathbf{v} = A_x \omega_r \cos{(\omega_r t)} \mathbf{e_x}$) is submitted to angular rotation in input axis $\mathbf{\Omega} = \Omega_z \mathbf{e_z}$
+    \begin{equation*}
+        \norm{\mathbf{F_{Coriolis}}} = 2 m \Omega_z A_x \omega_r \cos{(\omega_r t)}
+    \end{equation*}
+
+    Considering the mass is attached to springs along x and y axes, the Coriolis force generates a deflection in the y-axis $\mathbf{F_{Coriolis}} = k_y \Delta y$.
+    \begin{equation*}
+        \Delta y = \frac{F_{Coriolis}}{k_y} = \frac{2 m \Omega_z A_x \omega_r \cos{(\omega_r t)}}{k_y}
+    \end{equation*}
+
+    This can be measured through capacitance: $C = \frac{\epsilon S}{y_0 + \Delta y} \sim \epsilon S (y_0 - \Delta y)$.
 \end{frame}
 
 \begin{frame}
