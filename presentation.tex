@@ -3,6 +3,7 @@
 \usetheme{m}
 
 \usepackage{subcaption}
+\usepackage{siunitx}
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
@@ -21,13 +22,13 @@
 
 \maketitle
 
-\begin{frame}
-  \frametitle{Table of Contents}
-  \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents[hideallsubsections]
-\end{frame}
+% \begin{frame}
+%   \frametitle{Table of Contents}
+%   \setbeamertemplate{section in toc}[sections numbered]
+%   \tableofcontents[hideallsubsections]
+% \end{frame}
 
-\section{Working principle}
+% \section{Working principle}
 
 \begin{frame}
 \frametitle{Vibratory gyroscope: the Coriolis effect}
@@ -115,7 +116,7 @@
 \end{columns}
 \end{frame}
 
-\section{Limitations}
+% \section{Limitations}
 
 \begin{frame}
 \frametitle{Limitations}
@@ -135,7 +136,7 @@
 \begin{frame}
 \frametitle{Multi-axis gyroscope sensors}
 \begin{columns}
-    \begin{column}{.60\textwidth}
+    \begin{column}{.58\textwidth}
         \begin{figure}
             \centering
             \includegraphics[width=1.0\linewidth]{vibrating_disk.png}
@@ -143,7 +144,7 @@
         \end{figure}
     \end{column}
     \hfill
-    \begin{column}{.50\textwidth}
+    \begin{column}{.48\textwidth}
         \begin{figure}
             \centering
             \includegraphics[width=1.0\linewidth]{gyro_mems_3in1.png}
@@ -153,11 +154,65 @@
 \end{columns}
 \end{frame}
 
-\section{Advantages \& drawbacks}
+% \section{Advantages \& drawbacks}
 
-\section{Performances \& applications}
+\begin{frame}
+\frametitle{Advantages}
+    \begin{itemize}
+        \item Can be made rugged to resist very high accelerations ($> 10000$ g)
+        \item Very short reaction time (i.e. rapid start-up capability)
+        \item Good shelf life and dormancy (because no bearings or lubricants)
+        \item Low power consumption
+        \item Small
+    \end{itemize}
+\end{frame}
 
-\section{References}
+\begin{frame}
+\frametitle{Drawbacks}
+    \begin{itemize}
+        \item High bias ($0.1$ to $1^{\circ}$/s)
+        \item Sensitivity to environment effects
+        \begin{itemize}
+            \item Temperature changes
+            \item Vibratory motion (cross-talk)
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% \section{Performances \& applications}
+\begin{frame}
+\frametitle{Performances}
+    \begin{table}
+    \begin{tabular}{lr}
+        \toprule
+        Bandwidth                   & 0 to \SI{500}{\hertz} \\
+        Dynamic range               & $\pm 10$ to $\pm \SI{1000}{\degree/\second}$ \\
+        Resolution                  & $< \SI{0.1}{\degree/\second}$ \\
+        Bias                        & $0.1$ to \SI{1}{\degree/\second} \\
+        Error due to temperature    & $0.01$ to \SI{0.05}{\%/\celsius} \\
+        Shock resistance            & $> \SI{20000}{g}$ \\
+        Cost                        & 1 to \SI{10}{\$} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Typical performances}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Applications}
+    Not good enough for inertial navigation systems, but good enough for control and stabilisation processes
+    \begin{itemize}
+        \item Automobile: driving assistance (skid and roll prevention)
+        \item Robotics
+        \begin{itemize}
+            \item Inertial navigation on small autonomous systems
+            \item Control and stabilisation
+        \end{itemize}
+        \item Motion sensing in smartphones and entertainment devices (Wii)
+    \end{itemize}
+\end{frame}
+
+% \section{References}
 
 \begin{frame}[allowframebreaks]
 \frametitle{References}
